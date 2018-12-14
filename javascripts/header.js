@@ -20,7 +20,7 @@ const headerVue = new Vue({
 	computed: {
 		animationDistance: function() {
 			const documentHeight = heroElement.clientHeight
-			return documentHeight
+			return documentHeight - 64
 		},
 		styleObject: function() {
 			const backgroundColor = `rgba(69, 90, 100, ${this.opacity})`
