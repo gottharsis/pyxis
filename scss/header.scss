@@ -37,11 +37,17 @@
 
 		li {
 			display: block;
-			margin: 0.5rem;
+			margin: 0.25rem;
 
 			a {
 				text-decoration: none;
 				color: inherit;
+
+				padding: 0.5rem;
+
+				&:hover {
+					background-color: rgba(black, 0.2);
+				}
 			}
 		}
 	}

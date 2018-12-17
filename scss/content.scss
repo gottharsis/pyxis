@@ -1,0 +1,56 @@
+.content {
+	background: white;
+	min-height: 100vh;
+}
+
+.mission-statement {
+	text-align: center;
+	padding: 2rem 2rem;
+
+	background-color: #ababab;
+
+	h1 {
+		font-size: 36px;
+		text-decoration: none;
+		font-weight: 500;
+		margin: 20px 0;
+		padding: 0;
+	}
+
+	p {
+		width: 60%;
+		margin: auto;
+		text-align: left;
+	}
+}
+
+.design-process {
+	display: flex;
+	flex-direction: row;
+    margin: 50px;
+    margin-top: 20px;
+}
+
+.design-process-heading {
+	text-align: center;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.design-process-item {
+	padding: 10px;
+	img {
+		display: block;
+		margin: auto;
+	}
+
+	h5 {
+		text-align: center;
+	}
+
+	border-right: 2px solid black;
+
+	&:first-child {
+		border-left: 2px solid black;
+	}
+}
