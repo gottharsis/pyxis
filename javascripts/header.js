@@ -1,17 +1,3 @@
-Vue.directive("scroll", {
-	inserted: function(el, binding) {
-		let f = function(evt) {
-			if (binding.value(evt, el)) {
-				wrapperElement.removeEventListener("scroll", f)
-			}
-		}
-		wrapperElement.addEventListener("scroll", f)
-	}
-})
-
-const wrapperElement = document.getElementById("wrapper")
-const heroElement = document.getElementsByClassName("hero")[0]
-
 const headerVue = new Vue({
 	el: "#header",
 	data: {
@@ -19,7 +5,7 @@ const headerVue = new Vue({
 	},
 	computed: {
 		animationDistance: function() {
-			const documentHeight = heroElement.clientHeight
+			const documentHeight = document.getElementById("hero").clientHeight
 			return documentHeight - 64
 		},
 		styleObject: function() {
@@ -31,12 +17,21 @@ const headerVue = new Vue({
 	},
 	methods: {
 		handleScroll: function() {
-			if (wrapperElement.scrollTop > this.animationDistance) {
-				this.opacity = 1
-			} else {
-				//prettier-ignore
-				this.opacity = Math.pow((1.0 * wrapperElement.scrollTop) / this.animationDistance, 4)
-			}
+			window.requestAnimationFrame(() => {
+				if (window.scrollY > this.animationDistance) {
+					this.opacity = 1
+				} else {
+					//prettier-ignore
+					this.opacity = Math.pow((1.0 * window.scrollY) / this.animationDistance, 4)
+				}
+			})
 		}
+	},
+	mounted: function() {
+		this.heroElement = document.getElementById("hero")
+		window.addEventListener("scroll", this.handleScroll)
+	},
+	beforeDestroy: function() {
+		window.removeEventListener("scroll", this.handleScroll)
 	}
 })
