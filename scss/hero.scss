@@ -1,13 +1,4 @@
-#wrapper {
-	height: 100vh;
-	overflow: hidden auto;
-	perspective: 1px;
-	margin: 0;
-	padding: 0;
-	transform-style: preserve-3d;
-}
-
-.hero {
+#hero {
 	position: relative;
 	height: 100vh;
 	display: flex;
@@ -16,23 +7,19 @@
 	font-size: 48px;
 	color: #fff;
 	width: 100%;
-}
+	// }
 
-.hero::after {
-	content: " ";
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	margin: 0;
-
-	transform-origin: center center;
-
-	transform: translateZ(-2px) scale(3);
+	// .hero::after {
+	// content: " ";
+	// position: absolute;
+	// top: 0;
+	// right: 0;
+	// bottom: 0;
+	// left: 0;
+	// width: 100%;
+	// margin: 0;
 	background-size: cover;
-	z-index: -1;
+	background-position: center center;
 
 	// background-image: url("http://source.unsplash.com/pjxzpoYo5Gs");
 	background-image: url("/img/PolarisHeroImage.jpg");

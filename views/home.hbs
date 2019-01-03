@@ -1,4 +1,4 @@
-<div class="hero">
+<div id="hero" :style="styleObject">
     <h1 style="letter-spacing: 50px">Pyxis</h1>
 </div>
 <div class="content">
@@ -47,5 +47,13 @@
                 jimme the money$ pls. THis is vry imprtant.
             </p>
         </div>
+    </div>
+    <div class="plans-gallery">
+        <ol class="plans">
+            <li v-for="plan in plans">
+                <img src="{{plan.imgUrl}}" class="plan-image">
+                <p class="plan">{{plan.description}}</p>
+            </li>
+        </ol>
     </div>
 </div>
