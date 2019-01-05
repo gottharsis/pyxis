@@ -10,7 +10,7 @@ var gulp = require("gulp"),
 
 gulp.task("sass", () => {
 	return gulp
-		.src("./scss/*.scss")
+		.src("./scss/**/*.scss")
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer())
@@ -21,7 +21,7 @@ gulp.task("sass", () => {
 
 gulp.task("sass:bs", function() {
 	return gulp
-		.src("./scss/*.scss")
+		.src("./scss/**/*.scss")
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer())
@@ -33,7 +33,7 @@ gulp.task("sass:bs", function() {
 
 gulp.task("js", () => {
 	return gulp
-		.src("./javascripts/*.js")
+		.src("./javascripts/**/*.js")
 		.pipe(sourcemaps.init())
 		.pipe(babel())
 		.pipe(concat("script.js"))
@@ -43,7 +43,7 @@ gulp.task("js", () => {
 
 gulp.task("js:bs", () => {
 	return gulp
-		.src("./javascripts/*.js")
+		.src("./javascripts/**/*.js")
 		.pipe(sourcemaps.init())
 		.pipe(babel())
 		.pipe(concat("script.js"))
@@ -53,8 +53,8 @@ gulp.task("js:bs", () => {
 })
 
 gulp.task("watch", () => {
-	gulp.watch("scss/*.scss", gulp.series("sass"))
-	gulp.watch("javascripts/*.js", gulp.series("js"))
+	gulp.watch("scss/**/*.scss", gulp.series("sass"))
+	gulp.watch("javascripts/**/*.js", gulp.series("js"))
 })
 
 gulp.task("nodemon", function(cb) {
@@ -74,16 +74,17 @@ gulp.task("nodemon", function(cb) {
 
 gulp.task(
 	"browserSync",
-	gulp.series("nodemon", function() {
+	gulp.series("nodemon", function(done) {
 		bs.init({
 			proxy: "http://localhost:3000",
 			port: 7000,
 			online: false
 		})
 
-		gulp.watch("scss/*.scss", gulp.series("sass:bs"))
-		gulp.watch("javascripts/*.js", gulp.series("js:bs"))
+		gulp.watch("scss/**/*.scss", gulp.series("sass:bs"))
+		gulp.watch("javascripts/**/*.js", gulp.series("js:bs"))
 		gulp.watch("views/**/*").on("change", bs.reload)
+		done()
 	})
 )
 

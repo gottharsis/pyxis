@@ -10,6 +10,18 @@
 			"name": "Launch Chrome against localhost",
 			"url": "http://localhost:7000",
 			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"type": "chrome",
+			"request": "attach",
+			"name": "Attach to running chrome",
+			"port": 9222,
+			"url": "http://localhost:7000",
+			"webRoot": "${workspaceFolder}",
+			"pathMapping": {
+				"/js/": "${workspaceFolder}/javascripts/"
+			},
+			"sourceMaps": true
 		}
 	]
 }
