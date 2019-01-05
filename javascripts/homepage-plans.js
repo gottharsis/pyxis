@@ -33,14 +33,12 @@ const homepagePlans = new Vue({
 		}
 	},
 	methods: {
-		prevElement: function() {
-			console.log("prevElement")
+		prevElement() {
 			if (this.activeIndex !== 0) {
 				this.activeIndex--
 			}
 		},
-		nextElement: function() {
-			console.log("nextElement")
+		nextElement() {
 			if (this.activeIndex !== this.plans.length - 1) {
 				this.activeIndex++
 			}
