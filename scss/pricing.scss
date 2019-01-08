@@ -1,0 +1,15 @@
+.pricing-page {
+	.plan {
+		display: flex;
+		flex-direction: row;
+		width: 80%;
+
+		p {
+			flex: 5;
+		}
+		img {
+			flex: 0;
+			margin: 10px;
+		}
+	}
+}

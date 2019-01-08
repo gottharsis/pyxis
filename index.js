@@ -22,4 +22,9 @@ app.get("/", (req, res) => {
 	res.render("home", { title: "Homepage" })
 })
 
+app.get("/pricing", (req, res) => {
+	res.render("pricing", { title: "Pricing" })
+})
+
 app.listen(3000, () => console.log("Listening on port 3000"))
+
