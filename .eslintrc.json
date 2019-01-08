@@ -13,7 +13,7 @@
 	"rules": {
 		"prettier/prettier": "error",
 		"indent": ["error", "tab"],
-		"no-console": ["none"],
+		"no-console": 0,
 		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "double"],
 		"semi": ["error", "never"]
