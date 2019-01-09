@@ -11,10 +11,23 @@
 	li {
 		flex: 0;
 		margin: 0 50px;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
 		display: none;
 
-		&.active {
+		.plan-image {
 			display: block;
+			margin: 10px;
+			flex: 0;
+		}
+
+		.plan-description {
+			margin: 10px;
+		}
+
+		&.active {
+			display: flex;
 		}
 	}
 }

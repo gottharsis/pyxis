@@ -55,13 +55,13 @@
             <ol class="plans-list">
                 <li v-for="(plan, index) in plans" :class="{ 'active': index === activeIndex }">
                     <img :src="plan.imgUrl" class="plan-image">
-                    <p class="plan">
+                    <div class="plan-description">
                         <% plan.description %>
-                    </p>
+                    </div>
                 </li>
             </ol>
         </div>
         <div class="gallery-button button-right" @click="nextElement()">
+        </div>
     </div>
-</div>
 </div>
