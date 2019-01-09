@@ -1,0 +1,20 @@
+.about-page {
+    padding: 0 10%;
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 20px;
+        height: 40vh;
+
+        .testimonial {
+            border: 2px solid black;
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+    }
+}

@@ -1,4 +1,5 @@
-<div class="hero">
+{{> nav fade=true }}
+<div id="hero" :style="styleObject">
     <h1 style="letter-spacing: 50px">Pyxis</h1>
 </div>
 <div class="content">
@@ -46,6 +47,21 @@
                 This is an exampel of what kind of stuff we do at pyxis. w r vry smrt pls hire us. Also we do SEO.
                 jimme the money$ pls. THis is vry imprtant.
             </p>
+        </div>
+    </div>
+    <div class="plans-gallery" id="plans">
+        <div class="gallery-button button-left" @click="prevElement()"></div>
+        <div class="plans-wrapper">
+            <ol class="plans-list">
+                <li v-for="(plan, index) in plans" :class="{ 'active': index === activeIndex }">
+                    <img :src="plan.imgUrl" class="plan-image">
+                    <div class="plan-description">
+                        <% plan.description %>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="gallery-button button-right" @click="nextElement()">
         </div>
     </div>
 </div>
