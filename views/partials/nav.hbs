@@ -1,4 +1,4 @@
-<div id="header" :style="styleObject">
+<div id="header" {{#if fade}} :style="styleObject" {{/if}}>
     <div class="header-left">
         <div class="title">Pyxis</div>
     </div>
@@ -13,3 +13,8 @@
         </ul>
     </div>
 </div>
+
+{{#unless fade}}
+    <div class="nav-spacer"></div>
+{{/unless}}
+
