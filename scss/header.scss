@@ -4,7 +4,7 @@
 	flex-direction: row;
 	height: 4rem;
 	box-sizing: border-box;
-	padding: 0 1rem;
+	padding: 0.5rem 1rem;
 	padding-right: 2rem;
 	background-color: rgba(69, 90, 100, 1);
 	color: white;
@@ -12,6 +12,11 @@
 	top: 0;
 	left: 0;
 	right: 0;
+
+	.nav-logo {
+		max-height: 2rem;
+		margin: 0 0.5rem;
+	}
 
 	.spacer {
 		flex: 300;
@@ -23,6 +28,9 @@
 		align-items: center;
 		.title {
 			font-size: 1.5rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
 		}
 	}
 
@@ -51,4 +59,10 @@
 			}
 		}
 	}
+}
+
+
+.nav-spacer {
+    height: 4rem;
+    width: 100%;
 }
