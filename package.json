@@ -9,13 +9,17 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.1",
+    "session-file-store": "^1.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
+    "babel-preset-flow": "^6.23.0",
     "browser-sync": "^2.26.3",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",

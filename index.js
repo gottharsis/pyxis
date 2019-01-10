@@ -1,5 +1,9 @@
 import express from "express"
 import hbs from "express-handlebars"
+import session from "express-session"
+import fs from "session-file-store"
+
+const FileStore = fs(session)
 
 const app = express()
 
@@ -13,6 +17,17 @@ app.engine(
 )
 
 app.set("view engine", "hbs")
+
+// sessions
+app.use(
+	session({
+		name: "pyxis",
+		secret: "secret-stuff",
+		saveUninitialized: true,
+		resave: true,
+		store: new FileStore()
+	})
+)
 
 // public directories
 app.use(express.static(__dirname + "/public"))
