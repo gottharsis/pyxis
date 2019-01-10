@@ -19,7 +19,7 @@
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
-    "babel-preset-flow": "^6.23.0",
+    "@babel/preset-flow": "^7.0.0",
     "browser-sync": "^2.26.3",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",

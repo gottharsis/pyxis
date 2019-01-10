@@ -1,3 +1,5 @@
+// @flow
+
 import express from "express"
 import hbs from "express-handlebars"
 import session from "express-session"
