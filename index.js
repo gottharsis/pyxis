@@ -1,9 +1,9 @@
-// @flow
-
 import express from "express"
 import hbs from "express-handlebars"
 import session from "express-session"
 import fs from "session-file-store"
+
+import productRouter from "./routes/products"
 
 const FileStore = fs(session)
 
@@ -33,6 +33,10 @@ app.use(
 
 // public directories
 app.use(express.static(__dirname + "/public"))
+
+// routers
+
+app.use("/products", productRouter)
 
 // default router
 app.get("/", (req, res) => {
