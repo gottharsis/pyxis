@@ -1,12 +1,12 @@
 import express from "express"
 import hbs from "express-handlebars"
 import session from "express-session"
-import fs from "session-file-store"
+// import fs from "session-file-store"
+import SessionStore from "connect-session-knex"
+import knex from "./db/database"
 
 import productRouter from "./routes/products"
 import merchRouter from "./routes/merch"
-
-const FileStore = fs(session)
 
 const app = express()
 
@@ -25,13 +25,19 @@ app.engine(
 app.set("view engine", "hbs")
 
 // sessions
+const KnexSessionStore = SessionStore(session)
+const store = new KnexSessionStore({
+	knex
+})
+
 app.use(
 	session({
 		name: "pyxis",
 		secret: "secret-stuff",
 		saveUninitialized: true,
 		resave: true,
-		store: new FileStore()
+		cookie: { maxAge: 1 * 24 * 60 * 60 * 1000 },
+		store
 	})
 )
 
