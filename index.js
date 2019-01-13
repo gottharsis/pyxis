@@ -4,6 +4,7 @@ import session from "express-session"
 import fs from "session-file-store"
 
 import productRouter from "./routes/products"
+import merchRouter from "./routes/merch"
 
 const FileStore = fs(session)
 
@@ -14,7 +15,10 @@ app.engine(
 	"hbs",
 	hbs({
 		extname: ".hbs",
-		defaultLayout: "main"
+		defaultLayout: "main",
+		helpers: {
+			"product-link": id => `/view-product/${id}`
+		}
 	})
 )
 
@@ -37,6 +41,7 @@ app.use(express.static(__dirname + "/public"))
 // routers
 
 app.use("/products", productRouter)
+app.use("/", merchRouter)
 
 // default router
 app.get("/", (req, res) => {
