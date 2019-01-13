@@ -1,5 +1,5 @@
 const headerVue = new Vue({
-	el: "#header",
+	el: "#header.fade",
 	data() {
 		return {
 			opacity: 0,
