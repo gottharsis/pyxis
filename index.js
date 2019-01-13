@@ -36,7 +36,7 @@ app.use(
 		secret: "secret-stuff",
 		saveUninitialized: true,
 		resave: true,
-		cookie: { maxAge: 1 * 24 * 60 * 60 * 1000 },
+		cookie: { maxAge: 1 * 24 * 60 * 60 * 1000 }, // 1 day
 		store
 	})
 )
