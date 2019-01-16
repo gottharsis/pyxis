@@ -15,6 +15,7 @@
     "express-session": "^1.15.6",
     "faker": "^4.1.0",
     "knex": "^0.16.3",
+    "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "pg": "^7.7.1",
     "session-file-store": "^1.2.0"
@@ -23,9 +24,12 @@
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-flow": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "browser-sync": "^2.26.3",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
@@ -40,13 +44,17 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
+    "jest": "^23.6.0",
     "node-sass": "^4.11.0",
-    "prettier": "^1.15.3"
+    "prettier": "^1.15.3",
+    "supertest": "^3.3.0",
+    "supertest-session": "^3.3.0"
   },
   "scripts": {
     "start": "nodemon index.js --exec babel-node",
     "watch": "gulp watch",
     "sass": "gulp sass",
-    "dev": "gulp"
+    "dev": "gulp",
+    "test": "jest"
   }
 }

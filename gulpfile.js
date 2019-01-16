@@ -6,7 +6,8 @@ var gulp = require("gulp"),
 	sourcemaps = require("gulp-sourcemaps"),
 	babel = require("gulp-babel"),
 	nodemon = require("gulp-nodemon"),
-	bs = require("browser-sync")
+	bs = require("browser-sync"),
+	path = require("path")
 
 gulp.task("sass", () => {
 	return gulp
@@ -62,7 +63,9 @@ gulp.task("nodemon", function(cb) {
 
 	return nodemon({
 		script: "index.js",
-		exec: "babel-node",
+		exec:
+			path.join(__dirname, "node_modules/.bin/babel-node") +
+			" --inspect=9229",
 		watch: ["index.js", "routes/**/*", "views/**/*"]
 	}).on("start", function() {
 		if (!started) {

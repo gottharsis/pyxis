@@ -13,4 +13,7 @@ const db = knex({
 	}
 })
 
-export default db
+// for testing only
+export const destroyConnection = () => knex.destroy()
+
+export default knex
