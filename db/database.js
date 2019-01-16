@@ -1,9 +1,8 @@
 // @flow
-import knex from "knex"
 import dotenv from "dotenv"
 dotenv.config()
 
-const db = knex({
+const knex = require("knex")({
 	client: "pg",
 	connection: {
 		host: process.env.PGHOST,
