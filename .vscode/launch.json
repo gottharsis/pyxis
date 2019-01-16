@@ -22,6 +22,23 @@
 				"/js/": "${workspaceFolder}/javascripts/"
 			},
 			"sourceMaps": true
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Gulp task",
+			"program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js",
+			"port": 9229,
+			"protocol": "inspector"
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "gulp attach",
+			"processId": "${command:PickProcess}",
+			"restart": true,
+			"protocol": "inspector",
+			"port": 9229
 		}
 	]
 }
