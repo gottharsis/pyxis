@@ -1,30 +1,32 @@
 // @flow
 import db from "./database"
-import { IProduct } from "../models/product"
+import type { Product } from "../models/product"
+import isNil from "lodash/isNil"
 
-const products_db = db("products")
-
-export const getProduct = async (id: number): Promise<IProduct> => {
+export const getProduct = async (id: number): Promise<Product> => {
+	const products_db = db("products")
 	try {
-		const queryResult = await products_db
-			.where({ id })
-			.limit(1)
-			.select("*")
-		return queryResult[0]
+		const queryResult = await products_db.where({ id }).first()
+		if (!isNil(queryResult)) {
+			return queryResult
+		} else {
+			throw new Error(`No product with id ${id}`)
+		}
 	} catch (e) {
 		throw new Error(e)
 	}
 }
 
-interface IGetProducts {
-	limit?: number;
-	offset?: number;
+export type getProductsArgs = {
+	limit?: number,
+	offset?: number
 }
 
-export const getProducts = async (
+export const getProducts = async ({
 	limit = 10,
 	offset = 0
-): Promise<IProduct[]> => {
+}: getProductsArgs = {}): Promise<Product[]> => {
+	const products_db = db("products")
 	try {
 		const queryResult = await products_db.limit(limit).offset(offset)
 		return queryResult
