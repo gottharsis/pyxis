@@ -29,3 +29,5 @@ const heroVue = new Vue({
 		window.addEventListener("scroll", this.handleScroll)
 	}
 })
+
+module.exports = heroVue

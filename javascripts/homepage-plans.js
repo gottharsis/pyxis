@@ -45,3 +45,5 @@ const homepagePlans = new Vue({
 		}
 	}
 })
+
+module.exports = homepagePlans

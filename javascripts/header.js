@@ -47,3 +47,5 @@ const headerVue = new Vue({
 		window.removeEventListener("resize", this.handleResize)
 	}
 })
+
+module.exports = headerVue
