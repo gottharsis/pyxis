@@ -64,3 +64,5 @@ sessions/
 
 # tern
 .tern-port
+
+\.temp
