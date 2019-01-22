@@ -3,8 +3,8 @@ import hbs from "express-handlebars"
 import session from "express-session"
 import bodyParser from "body-parser"
 import morgan from "morgan"
+import _ from "lodash"
 // import fs from "session-file-store"
-import SessionStore from "connect-session-knex"
 import knex from "./db/database"
 
 import productRouter from "./routes/products"
@@ -33,7 +33,7 @@ app.use(bodyParser.json())
 app.use(morgan("dev"))
 
 // sessions
-const KnexSessionStore = SessionStore(session)
+const KnexSessionStore = require("connect-session-knex")(session)
 const store = new KnexSessionStore({
 	knex
 })
@@ -71,6 +71,16 @@ app.get("/about", (req, res) => {
 	res.render("about", { title: "About" })
 })
 
-
+// test the sessions
+app.get("/session", (req, res) => {
+	let n
+	if (req.session.hasOwnProperty("n")) {
+		n = req.session.n + 1
+	} else {
+		n = 0
+	}
+	req.session.n = n
+	res.json({ n })
+})
 
 export default app
