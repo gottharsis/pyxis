@@ -66,7 +66,7 @@ gulp.task("nodemon", function(cb) {
 		exec:
 			path.join(__dirname, "node_modules/.bin/babel-node") +
 			" --inspect=9229",
-		watch: ["index.js", "routes/**/*", "views/**/*"]
+		watch: ["index.js", "app.js", "routes/**/*", "views/**/*"]
 	}).on("start", function() {
 		if (!started) {
 			cb()

@@ -66,3 +66,9 @@ sessions/
 .tern-port
 
 \.temp
+
+tags
+
+*.js~
+
+*.jz~
