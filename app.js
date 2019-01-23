@@ -9,7 +9,7 @@ import knex from "./db/database"
 
 import productRouter from "./routes/products"
 import merchRouter from "./routes/merch"
-import cartRouter from "./routes/cart"
+import cartAPIRouter from "./routes/cart-api"
 
 const app = express()
 
@@ -56,7 +56,7 @@ app.use(express.static(__dirname + "/public"))
 
 app.use("/products", productRouter)
 app.use("/", merchRouter)
-app.use("/cart", cartRouter)
+app.use("/cart-api", cartAPIRouter)
 
 // default router
 app.get("/", (req, res) => {
