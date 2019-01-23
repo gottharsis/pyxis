@@ -60,12 +60,9 @@ router.get("/remove/:id", async (req: $Request, res: $Response) => {
 
 router.post("/update", async (req: $Request, res: $Response) => {
 	const updates = req.body.updates
-	debugger
 	const cart = initializeCart(req)
 	if (!_.isNil(updates) && !_.isEmpty(updates)) {
-		debugger
 		await cart.updateCart(updates)
-		debugger
 	}
 	cart.saveCart(req)
 	res.json(cart)
