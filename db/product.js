@@ -4,6 +4,9 @@ import type { Product } from "../models/product"
 import isNil from "lodash/isNil"
 
 export const getProduct = async (id: number): Promise<Product> => {
+	if (isNaN(id)) {
+		return null
+	}
 	const products_db = db("products")
 	try {
 		const queryResult = await products_db.where({ id }).first()

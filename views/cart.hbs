@@ -1,5 +1,25 @@
-<div class="cart">
-    {{#each items}}
-        {{> cart-item this}}
-    {{/each}}
+<div class="cart-page">
+	{{> nav}}
+	<h1>Cart</h1>
+	<div id="cart-container">
+		<section v-if="dataLoaded">
+			<div class="cart-item" v-for="(item, index) in items">
+				<h2>
+					<% item.product.name %>
+				</h2>
+				<p>
+					<% currencyFormat(item.product.price) %>
+				</p>
+				<div id="quantity">
+					<label for="#quantity">Quantity: </label>
+					<input type="number" name="quantity" v-model="items[index].newQty">
+				</div>
+				<button @click="removeFromCart(index)" class="button">Remove from cart</button>
+			</div>
+			<button @click="updateCart" class="button">Update cart</button>
+		</section>
+		<section v-else>
+			<h1>Loading cart, please wait</h1>
+		</section>
+	</div>
 </div>

@@ -10,6 +10,7 @@ import knex from "./db/database"
 import productRouter from "./routes/products"
 import merchRouter from "./routes/merch"
 import cartAPIRouter from "./routes/cart-api"
+import cartRouter from "./routes/cart"
 
 const app = express()
 
@@ -20,7 +21,16 @@ app.engine(
 		extname: ".hbs",
 		defaultLayout: "main",
 		helpers: {
-			"product-link": id => `/view-product/${id}`
+			productLink: id => `/view-product/${id}`,
+			addToCartLink: id => `/cart-api/add/${id}/1`,
+			currencyFormat: num => {
+				return (
+					"$" +
+					_.parseInt(num)
+						.toFixed(2)
+						.replace(/\d(?=(\d{3})+\.)/g, "$&,")
+				)
+			}
 		}
 	})
 )
@@ -57,6 +67,7 @@ app.use(express.static(__dirname + "/public"))
 app.use("/products", productRouter)
 app.use("/", merchRouter)
 app.use("/cart-api", cartAPIRouter)
+app.use("/cart", cartRouter)
 
 // default router
 app.get("/", (req, res) => {

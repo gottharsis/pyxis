@@ -1,3 +1,5 @@
+import Vue from "vue/dist/vue.common"
+
 const homepagePlans = new Vue({
 	el: "#plans",
 	delimiters: ["<%", "%>"],

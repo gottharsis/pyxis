@@ -7,5 +7,6 @@
 	"html.format.indentHandlebars": true,
 	"javascript.validate.enable": false,
 	"files.eol": "\n",
-	"jest.pathToJest": "npm run test -- "
+	"jest.pathToJest": "npm run test -- ",
+	"eslint.enable": true
 }

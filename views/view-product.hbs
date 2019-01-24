@@ -1,0 +1,15 @@
+{{> nav}}
+<div class="view-product-page">
+	<div class="product-image"><img src="{{item.imageURL}}" /></div>
+	<div class="product-text" id="view-product">
+		<h1>{{ item.name }}</h1>
+		<p>{{ item.description }}</p>
+		<p>{{ item.price }}</p>
+		<div class="product-quantity">
+			<label for="quantity">Quantity: </label>
+			<input type="number" name="quantity" value="1" min="1" v-model="qty" />
+		</div>
+		<button class="button" @click="addToCart">Add to Cart</button>
+		<input type="hidden" name="id" ref="id" value="{{item.id}}" />
+	</div>
+</div>

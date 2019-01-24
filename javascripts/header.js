@@ -1,3 +1,5 @@
+import Vue from "vue/dist/vue.common"
+
 const headerVue = new Vue({
 	el: "#header.fade",
 	data() {

@@ -16,7 +16,7 @@ var gulp = require("gulp"),
 
 gulp.task("sass", () => {
 	return gulp
-		.src("./scss/**/*.scss")
+		.src("scss/**/[^_]*.?(s)css")
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer())
@@ -27,19 +27,21 @@ gulp.task("sass", () => {
 })
 
 gulp.task("js", () => {
-	return browserify({
-		entries: "./javascripts/index.js"
-	})
-		.transform(babelify)
-		.bundle()
-		.pipe(source("./javascripts/index.js"))
-		.pipe(buffer())
-		.pipe(sourcemaps.init())
-		.pipe(uglify())
-		.pipe(sourcemaps.write())
-		.pipe(rename("app.js"))
-		.pipe(gulp.dest("./public/js"))
-		.pipe(bs.stream())
+	return (
+		browserify({
+			entries: "./javascripts/index.js"
+		})
+			.transform(babelify)
+			.bundle()
+			.pipe(source("./javascripts/index.js"))
+			.pipe(buffer())
+			.pipe(sourcemaps.init())
+			// .pipe(uglify())
+			.pipe(sourcemaps.write())
+			.pipe(rename("app.js"))
+			.pipe(gulp.dest("./public/js"))
+			.pipe(bs.stream())
+	)
 })
 
 gulp.task("watch", () => {

@@ -1,9 +1,13 @@
-const heroVue = require("./hero.js"),
-	headerVue = require("./header"),
-	homepagePlans = require("./homepage-plans.js")
+// import heroVue from "./hero.js"
+// import headerVue from "./header"
+// import homepagePlans from "./homepage-plans"
+// import viewProduct from "./view-product.js"
+import cartVue from "./cart"
 
-module.exports = {
-	heroVue,
-	headerVue,
-	homepagePlans
+window.vues = {
+	// heroVue,
+	// headerVue,
+	// homepagePlans,
+	// viewProduct,
+	cartVue
 }

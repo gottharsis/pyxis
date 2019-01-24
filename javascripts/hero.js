@@ -1,3 +1,5 @@
+import Vue from "vue/dist/vue.common"
+
 const heroVue = new Vue({
 	el: "#hero",
 	data: {
