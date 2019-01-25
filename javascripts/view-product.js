@@ -1,5 +1,6 @@
 import axios from "axios"
 import Vue from "vue/dist/vue.common"
+import { showNotification } from "./notification"
 
 const viewProduct = new Vue({
 	el: "#view-product",
@@ -23,10 +24,10 @@ const viewProduct = new Vue({
 				})
 				.then(
 					res => {
-						alert("Success!")
+						showNotification("Added to cart!", true)
 					},
 					reason => {
-						alert("Failed")
+						showNotification("Could not add to cart", false)
 						console.log(reason)
 					}
 				)

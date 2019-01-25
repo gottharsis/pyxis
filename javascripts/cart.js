@@ -1,6 +1,7 @@
 import Vue from "vue/dist/vue.common"
 import axios from "axios"
 import parseInt from "lodash/parseInt"
+import { showNotification } from "./notification"
 
 const cartVue = new Vue({
 	el: "#cart-container",
@@ -15,9 +16,9 @@ const cartVue = new Vue({
 	methods: {
 		removeFromCart(index) {
 			const removeId = this.items[index].product.id
-			axios
-				.get(`/cart-api/remove/${removeId}`)
-				.then(res => this.processResponse(res))
+			axios.get(`/cart-api/remove/${removeId}`).then(res => {
+				this.processResponse(res)
+			})
 		},
 		updateCart() {
 			const updates = this.items
@@ -34,7 +35,7 @@ const cartVue = new Vue({
 				)
 				.then(res => {
 					this.processResponse(res)
-					alert("Updated Cart")
+					showNotification("Updated Cart")
 				})
 		},
 		processResponse(res) {

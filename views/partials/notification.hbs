@@ -1,0 +1,7 @@
+<div class="notification-section" id="notification">
+    <div :class="{ notification: true, success: success, failure: !success }" v-if="show">
+        <p>
+            <% message %>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@import "../colors";
+.notification-section {
+	position: fixed;
+	width: 200px;
+	min-height: 100px;
+	right: 10px;
+	top: 80px;
+	z-index: 10;
+	background: clear;
+	.notification {
+		width: 100%;
+		height: 50px;
+		background: $notification-color;
+		border-radius: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $notification-text;
+
+		&.failure {
+			background: $notification-fail-color;
+		}
+	}
+}
