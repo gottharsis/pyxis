@@ -1,3 +1,5 @@
+@import "colors";
+
 .content {
 	background: white;
 	min-height: 100vh;
@@ -7,7 +9,7 @@
 	text-align: center;
 	padding: 2rem 2rem;
 
-	background-color: #ababab;
+	background-color: $mission-statement-bg;
 
 	h1 {
 		font-size: 36px;
@@ -27,14 +29,14 @@
 .design-process {
 	display: flex;
 	flex-direction: row;
-    margin: 50px;
-    margin-top: 20px;
+	margin: 50px;
+	margin-top: 20px;
 }
 
 .design-process-heading {
 	text-align: center;
-    margin-bottom: 10px;
-    padding: 0;
+	margin-bottom: 10px;
+	padding: 0;
 }
 
 .design-process-item {
