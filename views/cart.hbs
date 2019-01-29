@@ -1,25 +1,42 @@
 <div class="cart-page">
 	{{> nav}}
-	<h1>Cart</h1>
-	<div id="cart-container">
-		<section v-if="dataLoaded">
-			<div class="cart-item" v-for="(item, index) in items">
-				<h2>
-					<% item.product.name %>
-				</h2>
-				<p>
-					<% currencyFormat(item.product.price) %>
-				</p>
-				<div id="quantity">
-					<label for="#quantity">Quantity: </label>
-					<input type="number" name="quantity" v-model="items[index].newQty">
+	<div class="container">
+		<h1>Cart</h1>
+		<div id="cart-container">
+			<section v-if="dataLoaded" class="cart-items">
+				<div class="cart-item" v-for="(item, index) in items">
+					<div class="item-image">
+						<img :src="item.product.imageURL">
+					</div>
+					<div class="item-name">
+						<h2>
+							<% item.product.name %>
+						</h2>
+					</div>
+					<div class="price">
+						<p>
+							<% currencyFormat(item.product.price) %>
+						</p>
+					</div>
+					<div class="quantity">
+						<label>Quantity: </label>
+						<input type="number" name="quantity" v-model="items[index].newQty">
+					</div>
+					<div class="remove-button">
+						<button @click="removeFromCart(index)" class="button">Remove from cart</button>
+					</div>
 				</div>
-				<button @click="removeFromCart(index)" class="button">Remove from cart</button>
-			</div>
-			<button @click="updateCart" class="button">Update cart</button>
-		</section>
-		<section v-else>
-			<h1>Loading cart, please wait</h1>
-		</section>
+				<div class="total-cost">
+					<p>Subtotal:</p>
+					<p>
+						<% currencyFormat (total) %>
+					</p>
+				</div>
+				<button @click="updateCart" class="button">Update cart</button>
+			</section>
+			<section v-else>
+				<h1>Loading cart, please wait</h1>
+			</section>
+		</div>
 	</div>
 </div>
