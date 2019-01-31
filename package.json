@@ -60,7 +60,7 @@
     "vinyl-transform": "^1.0.0"
   },
   "scripts": {
-    "start": "nodemon index.js --exec babel-node",
+    "start": "babel-node index.js",
     "watch": "gulp watch",
     "sass": "gulp sass",
     "dev": "gulp",
