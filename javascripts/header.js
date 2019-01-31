@@ -13,7 +13,7 @@ const headerVue = new Vue({
 		animationDistance: function() {
 			// should be recomputed
 			this.recomputeCounter
-			const documentHeight = document.getElementById("hero").clientHeight
+			const documentHeight = document.getElementsByClassName("fade-target")[0].clientHeight
 			return documentHeight - 64
 		},
 		styleObject: function() {
