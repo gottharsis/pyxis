@@ -4,24 +4,19 @@ var gulp = require("gulp"),
 	concat = require("gulp-concat"),
 	sass = require("gulp-sass"),
 	sourcemaps = require("gulp-sourcemaps"),
-	babel = require("gulp-babel"),
 	nodemon = require("gulp-nodemon"),
-	bs = require("browser-sync")
+	bs = require("browser-sync"),
+	path = require("path"),
+	browserify = require("browserify"),
+	babelify = require("babelify"),
+	buffer = require("vinyl-buffer"),
+	source = require("vinyl-source-stream"),
+	uglify = require("gulp-uglify"),
+	rename = require("gulp-rename")
 
 gulp.task("sass", () => {
 	return gulp
-		.src("./scss/**/*.scss")
-		.pipe(sourcemaps.init())
-		.pipe(sass().on("error", sass.logError))
-		.pipe(autoprefixer())
-		.pipe(concat("styles.css"))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest("public/css/"))
-})
-
-gulp.task("sass:bs", function() {
-	return gulp
-		.src("./scss/**/*.scss")
+		.src("scss/**/[^_]*.?(s)css")
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer())
@@ -32,24 +27,21 @@ gulp.task("sass:bs", function() {
 })
 
 gulp.task("js", () => {
-	return gulp
-		.src("./javascripts/**/*.js")
-		.pipe(sourcemaps.init())
-		.pipe(babel())
-		.pipe(concat("script.js"))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest("./public/js/"))
-})
-
-gulp.task("js:bs", () => {
-	return gulp
-		.src("./javascripts/**/*.js")
-		.pipe(sourcemaps.init())
-		.pipe(babel())
-		.pipe(concat("script.js"))
-		.pipe(sourcemaps.write())
-		.pipe(gulp.dest("./public/js/"))
-		.pipe(bs.stream())
+	return (
+		browserify({
+			entries: "./javascripts/index.js"
+		})
+			.transform(babelify)
+			.bundle()
+			.pipe(source("./javascripts/index.js"))
+			.pipe(buffer())
+			.pipe(sourcemaps.init())
+			// .pipe(uglify())
+			.pipe(sourcemaps.write())
+			.pipe(rename("app.js"))
+			.pipe(gulp.dest("./public/js"))
+			.pipe(bs.stream())
+	)
 })
 
 gulp.task("watch", () => {
@@ -62,8 +54,10 @@ gulp.task("nodemon", function(cb) {
 
 	return nodemon({
 		script: "index.js",
-		exec: "babel-node",
-		watch: ["index.js", "routes/**/*", "views/**/*"]
+		exec:
+			path.join(__dirname, "node_modules/.bin/babel-node") +
+			" --inspect=9229",
+		watch: ["index.js", "app.js", "routes/**/*", "views/**/*"]
 	}).on("start", function() {
 		if (!started) {
 			cb()
@@ -81,8 +75,8 @@ gulp.task(
 			online: false
 		})
 
-		gulp.watch("scss/**/*.scss", gulp.series("sass:bs"))
-		gulp.watch("javascripts/**/*.js", gulp.series("js:bs"))
+		gulp.watch("scss/**/*.scss", gulp.series("sass"))
+		gulp.watch("javascripts/**/*.js", gulp.series("js"))
 		gulp.watch("views/**/*").on("change", bs.reload)
 		done()
 	})

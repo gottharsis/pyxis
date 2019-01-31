@@ -1,67 +1,68 @@
 {{> nav fade=true }}
-<div id="hero" :style="styleObject">
-    <h1 style="letter-spacing: 50px">Pyxis</h1>
+<div id="hero" :style="styleObject" class="fade-target">
+	<h1 style="letter-spacing: 50px">Pyxis</h1>
 </div>
 <div class="content">
-    <div class="mission-statement">
-        <h1>
-            Don't just get a job, get the job you deserve.
-        </h1>
+	<div class="mission-statement">
+		<h1>Don't just get a job, get the job you deserve.</h1>
 
-        <p>
-            Pyxis is a website company that will help you to improve your business and to make your profits more. We
-            employ the goodest technologia. We have advacned people and we r very smart so u should hire us. Also
-            necessitamos spellchek.
-        </p>
-    </div>
-    <h1 class="design-process-heading">Our Design Process</h1>
-    <div class="design-process">
-        <div class="design-process-item">
-            <img src="img/cat.jpg">
-            <h5>Step For Design</h5>
-            <p>
-                This is an exampel of what kind of stuff we do at pyxis. w r vry smrt pls hire us. Also we do SEO.
-                jimme the money$ pls. THis is vry imprtant.
-            </p>
-        </div>
-        <div class="design-process-item">
-            <img src="img/cat.jpg">
-            <h5>Step For Design</h5>
-            <p>
-                This is an exampel of what kind of stuff we do at pyxis. w r vry smrt pls hire us. Also we do SEO.
-                jimme the money$ pls. THis is vry imprtant.
-            </p>
-        </div>
-        <div class="design-process-item">
-            <img src="img/cat.jpg">
-            <h5>Step For Design</h5>
-            <p>
-                This is an exampel of what kind of stuff we do at pyxis. w r vry smrt pls hire us. Also we do SEO.
-                jimme the money$ pls. THis is vry imprtant.
-            </p>
-        </div>
-        <div class="design-process-item">
-            <img src="img/cat.jpg">
-            <h5>Step For Design</h5>
-            <p>
-                This is an exampel of what kind of stuff we do at pyxis. w r vry smrt pls hire us. Also we do SEO.
-                jimme the money$ pls. THis is vry imprtant.
-            </p>
-        </div>
-    </div>
-    <div class="plans-gallery" id="plans">
-        <div class="gallery-button button-left" @click="prevElement()"></div>
-        <div class="plans-wrapper">
-            <ol class="plans-list">
-                <li v-for="(plan, index) in plans" :class="{ 'active': index === activeIndex }">
-                    <img :src="plan.imgUrl" class="plan-image">
-                    <div class="plan-description">
-                        <% plan.description %>
-                    </div>
-                </li>
-            </ol>
-        </div>
-        <div class="gallery-button button-right" @click="nextElement()">
-        </div>
-    </div>
+		<p>
+			Pyxis is a website company that will help you to improve your
+			business and to make your profits more. We employ the goodest
+			technologia. We have advacned people and we r very smart so u should
+			hire us. Also necessitamos spellchek.
+		</p>
+	</div>
+	<h1 class="design-process-heading">Unlimited Possibilities</h1>
+	<div class="design-process">
+		<div class="design-process-item">
+			<img src="/img/process/ResearchGraphic.png" />
+			<h5>Research</h5>
+			<p>
+				We understand what it means to run a business. That's why each
+				of projects begins with research to identify and satisfy your
+				business needs.
+			</p>
+		</div>
+		<div class="design-process-item">
+			<img src="/img/process/UXDesign.png" />
+			<h5>UX Design</h5>
+			<p>
+				Keeping the user in mind we innovate, test, and refine to
+				develop an experience tailored to an incredible user experience.
+			</p>
+		</div>
+		<div class="design-process-item">
+			<img src="/img/process/WebDesignGraphic.png" />
+			<h5>Web Design</h5>
+			<p>
+				Pyxis employs experience, creativity, and award winning
+				strategies to develop the perfect website.
+			</p>
+		</div>
+		<div class="design-process-item">
+			<img src="img/cat.jpg" />
+			<h5>Step For Design</h5>
+			<p>
+				This is an exampel of what kind of stuff we do at pyxis. w r vry
+				smrt pls hire us. Also we do SEO. jimme the money$ pls. THis is
+				vry imprtant.
+			</p>
+		</div>
+	</div>
+	<div class="plans-gallery" id="plans">
+		<div class="gallery-button button-left" @click="prevElement()"></div>
+		<div class="plans-wrapper">
+			<ol class="plans-list">
+				<li
+					v-for="(plan, index) in plans"
+					:class="{ 'active': index === activeIndex }"
+				>
+					<img :src="plan.imgUrl" class="plan-image" />
+					<div class="plan-description"><% plan.description %></div>
+				</li>
+			</ol>
+		</div>
+		<div class="gallery-button button-right" @click="nextElement()"></div>
+	</div>
 </div>

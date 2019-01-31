@@ -1,0 +1,27 @@
+.pricing-page {
+	// padding: 0 10%;
+	.plans-table {
+		.plan {
+			display: flex;
+			flex-direction: row;
+			height: auto;
+			padding: 1rem;
+			margin: 1rem;
+			border: solid 1px black;
+			border-radius: 25px;
+			box-sizing: border-box;
+			min-height: 120px;
+			background: white;
+			.plan-image {
+				flex: 1;
+				padding: 1rem;
+				box-sizing: border-box;
+			}
+			.plan-text {
+                flex: 8;
+                padding: 1rem;
+                box-sizing: border-box;
+			}
+		}
+	}
+}

@@ -1,0 +1,93 @@
+{{> title-section }}
+<div class="checkout-page page">
+	<h1>Checkout</h1>
+	<h2>Subtotal: {{currencyFormat total}}</h2>
+
+	<div class="checkout">
+		<form id="checkout-form">
+			<div>
+				<label for="email">Email:</label>
+				<input type="email" name="email" />
+			</div>
+			<div class="shipping-address">
+				<h3>Shipping Address</h3>
+				<div>
+					<label for="address1">Address Line 1</label>
+					<input type="text" name="address1" />
+				</div>
+				<div>
+					<label for="address2">Address Line 2</label>
+					<input type="text" name="address2" />
+				</div>
+				<div>
+					<label for="city">City</label>
+					<input type="text" name="city" />
+				</div>
+				<div><label for="state">State</label> {{> state-dropdown}}</div>
+				<div>
+					<label for="zip">Zip</label>
+					<input type="text" name="zip" />
+				</div>
+			</div>
+			<div class="billing-address">
+				<h3>Billing Address</h3>
+				<div class="same-billing-address">
+					<input
+						type="checkbox"
+						name="same-billing-address"
+						v-model="sameBillingAddress"
+					/>
+					<label for="same-billing-address">
+						Same as Shipping Address
+					</label>
+				</div>
+				<section v-if="!sameBillingAddress">
+					<div>
+						<label for="address1">Address Line 1</label>
+						<input type="text" name="address1" />
+					</div>
+					<div>
+						<label for="address2">Address Line 2</label>
+						<input type="text" name="address2" />
+					</div>
+					<div>
+						<label for="city">City</label>
+						<input type="text" name="city" />
+					</div>
+					<div>
+						<label for="state">State</label> {{> state-dropdown}}
+					</div>
+
+					<div>
+						<label for="zip">Zip</label>
+						<input type="text" name="zip" />
+					</div>
+				</section>
+			</div>
+			<div class="payment">
+				<h3>Payment Method:</h3>
+				<div>
+					<label for="cardholder">Name on Card: </label><br />
+					<input type="text" name="cardholder" />
+				</div>
+				<div>
+					<label for="creditCartNumber">
+						Credit Card Number (no dashes or punctuation): </label
+					><br />
+					<input type="number" name="creditCardNumber" />
+				</div>
+				<div>
+					<label for="cvv">CVV (3 digits on back of card)</label
+					><br />
+					<input type="number" name="cvv" size="3" width="3" />
+				</div>
+				<div>
+					<label for="expirationDate">
+						Expiration Date (MM/YYYY) </label
+					><br />
+					<input type="text" name="expiration" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

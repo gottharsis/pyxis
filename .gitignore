@@ -64,3 +64,15 @@ sessions/
 
 # tern
 .tern-port
+
+\.temp
+
+tags
+
+*.js~
+
+*.jz~
+
+tags\.lock
+
+tags\.temp

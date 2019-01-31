@@ -1,20 +1,48 @@
 .about-page {
-    padding: 0 10%;
-    .testimonials-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 20px;
-        height: 40vh;
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-gap: 20px;
+		height: 30vw;
+		width: 100%;
 
-        .testimonial {
-            border: 2px solid black;
-            min-height: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+		@media screen and (max-width: 992px) {
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+			height: 120vw;
+		}
 
-        }
-    }
+		.testimonial {
+			border: 2px solid black;
+			min-height: 50px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			background-position: center;
+			background-size: cover;
+
+			.testimonial-text {
+				padding: 2rem;
+			}
+		}
+
+		#northview-testimonial {
+			// background-image: url("/img/testimonials/northview.jpg");
+			background-image: linear-gradient(
+					rgba(black, 0.2),
+					rgba(black, 0.8)
+				),
+				url("/img/testimonials/northview.jpg");
+		}
+		#garuba-testimonial {
+			background-image: linear-gradient(
+					rgba(black, 0.2),
+					rgba(black, 0.8)
+				),
+				url("/img/testimonials/garuba.jpg");
+		}
+	}
 }

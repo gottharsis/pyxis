@@ -1,0 +1,49 @@
+<div class="cart-page">
+	{{> nav}}
+	<div class="container">
+		<h1>Cart</h1>
+		<div id="cart-container">
+			<section v-if="dataLoaded" class="cart-items">
+				<section v-if="items.length">
+					<div class="cart-item" v-for="(item, index) in items">
+						<div class="item-image">
+							<img :src="item.product.imageURL">
+						</div>
+						<div class="item-name">
+							<h2>
+								<% item.product.name %>
+							</h2>
+						</div>
+						<div class="price">
+							<p>
+								<% currencyFormat(item.product.price) %>
+							</p>
+						</div>
+						<div class="quantity">
+							<label>Quantity: </label>
+							<input type="number" name="quantity" v-model="items[index].newQty" @change="handleChangeInput">
+						</div>
+						<div class="remove-button">
+							<button @click="removeFromCart(index)" class="button">Remove from cart</button>
+						</div>
+					</div>
+					<div class="total-cost">
+						<p>Subtotal:</p>
+						<p>
+							<% currencyFormat (total) %>
+						</p>
+					</div>
+					<a href="/checkout" class="button">Checkout</a>
+				</section>
+				<!-- If there are no items in cart -->
+				<section v-else>
+					No Items in Cart! <br>
+					Add some by visiting our <a href="/merch">merch page</a>.
+				</section>
+			</section>
+			<section v-else>
+				<h1>Loading cart, please wait</h1>
+			</section>
+		</div>
+	</div>
+</div>

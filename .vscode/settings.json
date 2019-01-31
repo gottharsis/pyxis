@@ -1,8 +1,16 @@
 {
-    "editor.formatOnSave": true,
-    "prettier.eslintIntegration": true,
-    "prettier.semi": false,
-    "prettier.tabWidth": 4,
-    "prettier.useTabs": true,
-    "html.format.indentHandlebars": true
+	"editor.formatOnSave": true,
+	"prettier.eslintIntegration": true,
+	"prettier.semi": false,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"html.format.indentHandlebars": true,
+	"javascript.validate.enable": false,
+	"files.eol": "\n",
+	"jest.pathToJest": "npm run test -- ",
+	"eslint.enable": true,
+	"path-intellisense.mappings": {
+		"img": "${workspaceRoot}/public/img",
+		"/": "${workspaceRoot}"}
+	}
 }

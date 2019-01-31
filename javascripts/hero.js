@@ -1,3 +1,5 @@
+import Vue from "vue/dist/vue.common"
+
 const heroVue = new Vue({
 	el: "#hero",
 	data: {
@@ -29,3 +31,5 @@ const heroVue = new Vue({
 		window.addEventListener("scroll", this.handleScroll)
 	}
 })
+
+module.exports = heroVue

@@ -1,3 +1,5 @@
+import Vue from "vue/dist/vue.common"
+
 const homepagePlans = new Vue({
 	el: "#plans",
 	delimiters: ["<%", "%>"],
@@ -24,7 +26,7 @@ const homepagePlans = new Vue({
 					// imgUrl: "/img/cat.jpg"
 				},
 				{
-					naem: "720",
+					name: "720",
 					description: "720 description",
 					imgUrl: "/img/plans/planHexagon.svg"
 					// imgUrl: "/img/cat.jpg"
@@ -45,3 +47,5 @@ const homepagePlans = new Vue({
 		}
 	}
 })
+
+module.exports = homepagePlans

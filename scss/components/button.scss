@@ -1,0 +1,29 @@
+@import "../colors";
+
+@mixin button-background-color($color) {
+	background-color: $color;
+	&:hover {
+		background-color: darken($color, 10%);
+	}
+}
+
+.button {
+	position: relative;
+	display: inline-block;
+	margin: 30px auto;
+	padding: 12px;
+
+	overflow: hidden;
+
+	// background-color: #2ecc71;
+	@include button-background-color($button-base-bg);
+	color: $button-base-text;
+	border-width: 0;
+	outline: none;
+	border-radius: 2px;
+	text-decoration: none;
+
+	box-shadow: 0 1px 4px rgba(black, 0.6);
+
+	cursor: pointer;
+}

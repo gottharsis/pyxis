@@ -1,0 +1,9 @@
+{{> nav}}
+<div class="merch-page">
+    <h1>Merchandise</h1>
+    <div class="merchandise">
+        {{#each items}}
+            {{> merch-product this}}
+        {{/each}}
+    </div>
+</div>

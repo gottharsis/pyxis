@@ -1,5 +1,7 @@
+import Vue from "vue/dist/vue.common"
+
 const headerVue = new Vue({
-	el: "#header",
+	el: "#header.fade",
 	data() {
 		return {
 			opacity: 0,
@@ -11,7 +13,7 @@ const headerVue = new Vue({
 		animationDistance: function() {
 			// should be recomputed
 			this.recomputeCounter
-			const documentHeight = document.getElementById("hero").clientHeight
+			const documentHeight = document.getElementsByClassName("fade-target")[0].clientHeight
 			return documentHeight - 64
 		},
 		styleObject: function() {
@@ -47,3 +49,5 @@ const headerVue = new Vue({
 		window.removeEventListener("resize", this.handleResize)
 	}
 })
+
+module.exports = headerVue
