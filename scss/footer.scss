@@ -1,7 +1,6 @@
 @import "colors";
 .footer {
 	height: 4rem;
-	width: 100%;
 
 	background-color: $footer-bg;
 	color: $footer-text;
@@ -10,9 +9,9 @@
 	flex-direction: row;
 	align-items: center;
 
+	margin: 0;
 	margin-top: 30px;
 	padding: 0.5rem 1rem;
-	box-sizing: border-box;
 
 	.spacer {
 		flex: 300;
