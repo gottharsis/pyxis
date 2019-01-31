@@ -82,6 +82,10 @@ app.get("/about", (req, res) => {
 	res.render("about", { title: "About" })
 })
 
+app.get("/pricing", (req, res) => {
+	res.render("pricing", { title: "Pricing" })
+})
+
 // test the sessions
 app.get("/session", (req, res) => {
 	let n
