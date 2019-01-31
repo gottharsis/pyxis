@@ -4,6 +4,7 @@ import homepagePlans from "./homepage-plans"
 import viewProduct from "./view-product.js"
 import cartVue from "./cart"
 import notification from "./notification"
+import checkout from "./checkout"
 
 window.vues = {
 	heroVue,
@@ -11,5 +12,6 @@ window.vues = {
 	homepagePlans,
 	viewProduct,
 	cartVue,
-	notification
+	notification,
+	checkout
 }
