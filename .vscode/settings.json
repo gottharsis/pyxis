@@ -8,5 +8,9 @@
 	"javascript.validate.enable": false,
 	"files.eol": "\n",
 	"jest.pathToJest": "npm run test -- ",
-	"eslint.enable": true
+	"eslint.enable": true,
+	"path-intellisense.mappings": {
+		"img": "${workspaceRoot}/public/img",
+		"/": "${workspaceRoot}"}
+	}
 }
