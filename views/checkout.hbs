@@ -1,0 +1,31 @@
+{{> nav }}
+<div class="checkout-page">
+    <h1>Checkout</h1>
+    <h2>Subtotal: {{currencyFormat total}}</h2>
+
+    <h2>Payment Method:</h2>
+    <div class="credit-cart">
+        <form>
+            <div>
+                <label for="cardholder">Name on Card: </label><br>
+                <input type="text" name="cardholder">
+            </div>
+            <div>
+                <label for="creditCartNumber">
+                    Credit Card Number (no dashes or punctuation):
+                </label><br>
+                <input type="number" name="creditCardNumber">
+            </div>
+            <div>
+                <label for="cvv">CVV (3 digits on back of card)</label><br>
+                <input type="number" name="cvv" size="3" width="3">
+            </div>
+            <div>
+                <label for="expirationDate">
+                    Expiration Date (MM/YYYY)
+                </label><br>
+                <input type="text" name="expiration">
+            </div>
+        </form>
+    </div>
+</div>

@@ -11,6 +11,7 @@ import productRouter from "./routes/products"
 import merchRouter from "./routes/merch"
 import cartAPIRouter from "./routes/cart-api"
 import cartRouter from "./routes/cart"
+import checkoutRouter from "./routes/checkout"
 
 const app = express()
 
@@ -68,6 +69,7 @@ app.use("/products", productRouter)
 app.use("/", merchRouter)
 app.use("/cart-api", cartAPIRouter)
 app.use("/cart", cartRouter)
+app.use("/checkout", checkoutRouter)
 
 // default router
 app.get("/", (req, res) => {
