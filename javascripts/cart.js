@@ -3,6 +3,8 @@ import axios from "axios"
 import parseInt from "lodash/parseInt"
 import { showNotification } from "./notification"
 
+const UPDATE_TIMER = 5000
+
 const cartVue = new Vue({
 	el: "#cart-container",
 	delimiters: ["<%", "%>"],
@@ -10,7 +12,8 @@ const cartVue = new Vue({
 		return {
 			items: [],
 			total: 0,
-			dataLoaded: false
+			dataLoaded: false,
+			isWaiting: false
 		}
 	},
 	methods: {
@@ -27,7 +30,7 @@ const cartVue = new Vue({
 					id: item.product.id,
 					qty: item.newQty
 				}))
-			axios
+			return axios
 				.post(
 					"/cart-api/update",
 					{ updates },
@@ -55,6 +58,18 @@ const cartVue = new Vue({
 					.toFixed(2)
 					.replace(/\d(?=(\d{3})+\.)/g, "$&,")
 			)
+		},
+
+		handleChangeInput() {
+			if (this.isWaiting) {
+				return
+			}
+			this.isWaiting = true
+			setTimeout(() => {
+				this.updateCart().then(() => {
+					this.isWaiting = false
+				})
+			}, UPDATE_TIMER)
 		}
 	},
 	mounted() {
