@@ -41,9 +41,11 @@
 
 .design-process-item {
 	padding: 10px;
+    flex: 1;
 	img {
 		display: block;
 		margin: auto;
+        height: 250px;
 	}
 
 	h5 {
