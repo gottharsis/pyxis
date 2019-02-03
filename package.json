@@ -7,6 +7,7 @@
   "author": "Ayush Nene <ayush3108@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/node": "^7.2.2",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "connect-session-knex": "^1.4.0",
