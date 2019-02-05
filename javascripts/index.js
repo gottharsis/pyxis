@@ -1,3 +1,5 @@
+import "./directives.js"
+
 import heroVue from "./hero.js"
 import headerVue from "./header"
 import homepagePlans from "./homepage-plans"
