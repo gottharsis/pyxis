@@ -13,13 +13,18 @@ const headerVue = new Vue({
 		animationDistance: function() {
 			// should be recomputed
 			this.recomputeCounter
-			const documentHeight = document.getElementsByClassName("fade-target")[0].clientHeight
+			const documentHeight = document.getElementsByClassName(
+				"fade-target"
+			)[0].clientHeight
 			return documentHeight - 64
 		},
 		styleObject: function() {
 			const backgroundColor = `rgba(69, 90, 100, ${this.opacity})`
+			const boxShadow = `0 4px 2px -2px rgba(0, 0, 0, ${0.4 *
+				this.opacity})`
 			return {
-				backgroundColor
+				backgroundColor,
+				boxShadow
 			}
 		}
 	},
