@@ -1,5 +1,6 @@
 .cart-page {
 	min-height: calc(100vh - 6.5rem);
+	margin-bottom: 30px;
 	.container {
 		max-width: 1200px;
 		margin: auto;
@@ -26,11 +27,11 @@
 			}
 
 			.quantity {
-                min-width: 200px;
-                input {
-                    margin: 20px;
-                    width: 50px;
-                }
+				min-width: 200px;
+				input {
+					margin: 20px;
+					width: 50px;
+				}
 			}
 
 			.remove-button {
