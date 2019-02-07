@@ -1,5 +1,6 @@
 .plans-list {
 	padding: 0;
+	margin: 0 20px;
 	list-style-type: none;
 	// flex-direction: row;
 	// flex-wrap: none;
@@ -41,14 +42,24 @@
 }
 
 .plans-wrapper {
-	width: 300px;
+	width: 640px;
 	position: relative;
+	max-width: 80vw;
 }
 
 .gallery-button {
-	height: auto;
+	height: 80%;
 	min-height: 100px;
 	cursor: pointer;
 	width: 20px;
 	background: red;
+	position: absolute;
+	top: 10%;
+	bottom: 10%;
+	&.button-left {
+		left: 0px;
+	}
+	&.button-right {
+		right: 0px;
+	}
 }

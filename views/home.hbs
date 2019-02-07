@@ -51,18 +51,17 @@
 		</div>
 	</div>
 	<div class="plans-gallery" id="plans">
-		<div class="gallery-button button-left" @click="prevElement()"></div>
 		<div class="plans-wrapper">
+			<div class="gallery-button button-left" @click="prevElement()"></div>
 			<ol class="plans-list">
-				<li
-					v-for="(plan, index) in plans"
-					:class="{ 'active': index === activeIndex }"
-				>
+				<li v-for="(plan, index) in plans" :class="{ 'active': index === activeIndex }">
 					<img :src="plan.imgUrl" class="plan-image" />
-					<div class="plan-description"><% plan.description %></div>
+					<div class="plan-description">
+						<% plan.description %>
+					</div>
 				</li>
 			</ol>
+			<div class="gallery-button button-right" @click="nextElement()"></div>
 		</div>
-		<div class="gallery-button button-right" @click="nextElement()"></div>
 	</div>
 </div>
