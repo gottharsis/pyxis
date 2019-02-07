@@ -7,6 +7,7 @@ import viewProduct from "./view-product.js"
 import cartVue from "./cart"
 import notification from "./notification"
 import checkout from "./checkout"
+import process from "./process"
 
 window.vues = {
 	heroVue,
@@ -15,5 +16,6 @@ window.vues = {
 	viewProduct,
 	cartVue,
 	notification,
-	checkout
+	checkout,
+	process
 }
