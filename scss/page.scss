@@ -1,7 +1,7 @@
 .title-section {
 	$height: 40vh;
 	height: $height;
-	background: #0f2749;
+	background: url("/img/Background.png") repeat;
 	margin-bottom: calc(12rem - #{$height});
 	padding: 6rem;
 	box-sizing: border-box;
