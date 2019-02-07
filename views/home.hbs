@@ -41,12 +41,11 @@
 			</p>
 		</div>
 		<div class="design-process-item">
-			<img src="img/cat.jpg" />
-			<h5>Step For Design</h5>
+			<img src="img/process/Marketing.png" />
+			<h5>Marketing</h5>
 			<p>
-				This is an exampel of what kind of stuff we do at pyxis. w r vry
-				smrt pls hire us. Also we do SEO. jimme the money$ pls. THis is
-				vry imprtant.
+				We know the a website is only part of the battle. Pyxis continues to fight by your side, engaging and creating new
+				user experiences, to achieve new heights.
 			</p>
 		</div>
 	</div>
@@ -56,9 +55,7 @@
 			<ol class="plans-list">
 				<li v-for="(plan, index) in plans" :class="{ 'active': index === activeIndex }">
 					<img :src="plan.imgUrl" class="plan-image" />
-					<div class="plan-description">
-						<% plan.description %>
-					</div>
+					<div class="plan-description" v-html="plan.description"></div>
 				</li>
 			</ol>
 			<div class="gallery-button button-right" @click="nextElement()"></div>

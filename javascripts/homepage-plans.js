@@ -24,7 +24,7 @@ const homepagePlans = new Vue({
 				{
 					name: "720",
 					description:
-						"The complete package with full 720(degree) coverage.",
+						"The complete package with full 720&deg; coverage.",
 					imgUrl: "/img/plans/planHexagon.svg"
 					// imgUrl: "/img/cat.jpg"
 				},

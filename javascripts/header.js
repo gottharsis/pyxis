@@ -21,7 +21,7 @@ const headerVue = new Vue({
 		styleObject: function() {
 			const backgroundColor = `rgba(69, 90, 100, ${this.opacity})`
 			const boxShadow = `0 4px 2px -2px rgba(0, 0, 0, ${0.4 *
-				this.opacity})`
+				this.opacity ** 2})`
 			return {
 				backgroundColor,
 				boxShadow
