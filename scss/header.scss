@@ -69,9 +69,10 @@
 				color: inherit;
 
 				padding: 0.5rem;
+                border-radius: 10px;
 
 				&:hover {
-					background-color: rgba(black, 0.2);
+					background-color: rgba(black, 0.4);
 				}
 			}
 		}

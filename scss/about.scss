@@ -44,5 +44,19 @@
 				),
 				url("/img/testimonials/garuba.jpg");
 		}
+		#form-testimonial {
+			background-image: linear-gradient(
+					rgba(black, 0.2),
+					rgba(black, 0.8)
+				),
+				url("/img/testimonials/form.jpg");
+		}
+		#accuracy-testimonial {
+			background-image: linear-gradient(
+					rgba(black, 0.2),
+					rgba(black, 0.8)
+				),
+				url("/img/testimonials/accuracy.jpg");
+		}
 	}
 }

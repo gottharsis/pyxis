@@ -1,9 +1,16 @@
 .pricing-page {
 	// padding: 0 10%;
 	.plans-table {
+		display: flex;
+		flex-direction: row;
+
+		@media screen and (max-width: 991px) {
+			flex-direction: column;
+		}
 		.plan {
-			display: flex;
-			flex-direction: row;
+			// display: flex;
+			flex-direction: column;
+			flex: 1;
 			height: auto;
 			padding: 1rem;
 			margin: 1rem;
@@ -18,10 +25,17 @@
 				box-sizing: border-box;
 			}
 			.plan-text {
-                flex: 8;
-                padding: 1rem;
-                box-sizing: border-box;
+				flex: 8;
+				padding: 1rem;
+				box-sizing: border-box;
 			}
+		}
+	}
+	.tau {
+		display: flex;
+		flex-direction: column;
+		img {
+			align-self: center;
 		}
 	}
 }
