@@ -1,0 +1,62 @@
+[
+    {
+        "name": "White T-Shirt",
+        "price": "15.00",
+        "description": "Show your Pyxis pride with style. Enjoy a 100% cotton shirt outfitted with the Pyxis logo.",
+        "imageURL": "/img/GrayscaleShirt-Recovered.png"
+    },
+    {
+        "name": "8GB Flash Drive",
+        "price": "3.00",
+        "description": "This Pyxis flash drive effortlessly transports and stores files, so you can have them wherever and whenever you need them.",
+        "imageURL": "/img/GrayFlashDrive.png"
+    },
+    {
+        "name": "8GB Flash Drive",
+        "price": "7.00",
+        "description": "This limited edition Pyxis flash drive effortlessly transports and stores files, so you can have them wherever and whenever you need them.",
+        "imageURL": "/img/ColorFlashDrive.png"
+    },
+    {
+        "name": "Snapback Hat",
+        "price": "10.00",
+        "description": "Block the sun with a stylish Pyxis hat.",
+        "imageURL": "/img/ColorBaseballCap.png"
+    },
+    {
+        "name": "Gray Snapback Hat",
+        "price": "15.00",
+        "description": "Block the sun with a retro edition stylish Pyxis hat.",
+        "imageURL": "/img/GrayBaseballCap.png"
+    },
+    {
+        "name": "Beanie",
+        "price": "10.00",
+        "description": "Keep warm and stylish with a Pyxis beanie.",
+        "imageURL": "/img/ColorBeanie.png"
+    },
+    {
+        "name": "Gray Beanie",
+        "price": "15.00",
+        "description": "Keep warm and stylish with a limited edition Pyxis beanie.",
+        "imageURL": "/img/ColorBeanie.png"
+    },
+    {
+        "name": "Water Bottle",
+        "price": "15.00",
+        "description": "Keep your drinks cold with a Pyxis water bottle.",
+        "imageURL": "/img/GrayBottle.png"
+    },
+    {
+        "name": "Umbrella",
+        "price": "15.00",
+        "description": "Keep yourself dry with a premium Pyxis umbrella.",
+        "imageURL": "/img/BlueUmbrella.png"
+    },
+    {
+        "name": "Backpack",
+        "price": "15.00",
+        "description": "Keep your items organized and secure with this high quality retro backpack.",
+        "imageURL": "/img/BlueUmbrella.png"
+    }
+]
