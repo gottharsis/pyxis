@@ -1,6 +1,5 @@
 {{> title-section }}
 <div class="checkout-page page">
-	<h1>Checkout</h1>
 	<h2>Subtotal: {{currencyFormat total}}</h2>
 
 	<div class="checkout">
@@ -32,11 +31,7 @@
 			<div class="billing-address">
 				<h3>Billing Address</h3>
 				<div class="same-billing-address">
-					<input
-						type="checkbox"
-						name="same-billing-address"
-						v-model="sameBillingAddress"
-					/>
+					<input type="checkbox" name="same-billing-address" v-model="sameBillingAddress" />
 					<label for="same-billing-address">
 						Same as Shipping Address
 					</label>
@@ -72,19 +67,16 @@
 				</div>
 				<div>
 					<label for="creditCartNumber">
-						Credit Card Number (no dashes or punctuation): </label
-					><br />
+						Credit Card Number (no dashes or punctuation): </label><br />
 					<input type="number" name="creditCardNumber" />
 				</div>
 				<div>
-					<label for="cvv">CVV (3 digits on back of card)</label
-					><br />
+					<label for="cvv">CVV (3 digits on back of card)</label><br />
 					<input type="number" name="cvv" size="3" width="3" />
 				</div>
 				<div>
 					<label for="expirationDate">
-						Expiration Date (MM/YYYY) </label
-					><br />
+						Expiration Date (MM/YYYY) </label><br />
 					<input type="text" name="expiration" />
 				</div>
 			</div>

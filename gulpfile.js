@@ -54,9 +54,7 @@ gulp.task("nodemon", function(cb) {
 
 	return nodemon({
 		script: "index.js",
-		exec:
-			path.join(__dirname, "node_modules/.bin/babel-node") +
-			" --inspect=9229",
+		exec: path.join("babel-node") + " --inspect=9229",
 		watch: ["index.js", "app.js", "routes/**/*", "views/**/*"]
 	}).on("start", function() {
 		if (!started) {

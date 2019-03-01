@@ -9,6 +9,10 @@ import notification from "./notification"
 import checkout from "./checkout"
 import process from "./process"
 
+import sidebarFunctions from "./sidebar"
+
+sidebarFunctions(window)
+
 window.vues = {
 	heroVue,
 	headerVue,

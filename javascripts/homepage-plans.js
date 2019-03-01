@@ -11,21 +11,21 @@ const homepagePlans = new Vue({
 					name: "180",
 					description:
 						"Simple, fast, effective - The basic plan for instant results.",
-					imgUrl: "/img/plans/planTriangle.svg"
+					imgUrl: "/img/plans/planTriangle.png"
 					// imgUrl: "/img/cat.jpg"
 				},
 				{
 					name: "360",
 					description:
 						"Our most popular plan offering the best results at an affordable price.",
-					imgUrl: "/img/plans/planSquare.svg"
+					imgUrl: "/img/plans/planSquare.png"
 					// imgUrl: "/img/cat.jpg"
 				},
 				{
 					name: "720",
 					description:
 						"The complete package with full 720&deg; coverage.",
-					imgUrl: "/img/plans/planHexagon.svg"
+					imgUrl: "/img/plans/planHexagon.png"
 					// imgUrl: "/img/cat.jpg"
 				},
 				{

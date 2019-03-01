@@ -31,6 +31,9 @@
 	flex-direction: row;
 	margin: 50px;
 	margin-top: 20px;
+	max-width: 100%;
+	box-sizing: border-box;
+	overflow-x: scroll;
 }
 
 .design-process-heading {
@@ -41,11 +44,11 @@
 
 .design-process-item {
 	padding: 10px;
-    flex: 1;
+	flex: 1;
 	img {
 		display: block;
 		margin: auto;
-        height: 250px;
+		height: 250px;
 	}
 
 	h5 {

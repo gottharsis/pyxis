@@ -21,6 +21,8 @@
 			display: block;
 			margin: 10px;
 			flex: 0;
+			width: 100px;
+			height: 100px;
 		}
 
 		.plan-description {
@@ -52,10 +54,10 @@
 	min-height: 100px;
 	cursor: pointer;
 	width: 20px;
-	background: red;
 	position: absolute;
 	top: 10%;
 	bottom: 10%;
+	font-size: 32px;
 	&.button-left {
 		left: 0px;
 	}

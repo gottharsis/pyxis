@@ -21,7 +21,8 @@
 						</div>
 						<div class="quantity">
 							<label>Quantity: </label>
-							<input type="number" name="quantity" v-model="items[index].newQty" @change="handleChangeInput">
+							<input type="number" name="quantity" v-model="items[index].newQty"
+								@change="handleChangeInput">
 						</div>
 						<div class="remove-button">
 							<button @click="removeFromCart(index)" class="button">Remove from cart</button>
@@ -33,7 +34,7 @@
 							<% currencyFormat (total) %>
 						</p>
 					</div>
-					<a href="/checkout" class="button">Checkout</a>
+
 				</section>
 				<!-- If there are no items in cart -->
 				<section v-else>
@@ -44,6 +45,7 @@
 			<section v-else>
 				<h1>Loading cart, please wait</h1>
 			</section>
+			<a href="/checkout" class="button">Checkout</a>
 		</div>
 	</div>
 </div>
