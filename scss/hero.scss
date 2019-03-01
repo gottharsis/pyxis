@@ -30,6 +30,12 @@
 		h1 {
 			margin: 0;
 		}
+		@media screen and (max-width: 560px) {
+			letter-spacing: 25px;
+		}
+		@media screen and (max-width: 360px) {
+			letter-spacing: normal;
+		}
 	}
 	.header-subtext {
 		letter-spacing: 25px;
@@ -37,6 +43,9 @@
 		h2 {
 			margin: 0;
 			margin-left: -25px;
+		}
+		@media screen and (max-width: 560px) {
+			letter-spacing: normal;
 		}
 	}
 }
