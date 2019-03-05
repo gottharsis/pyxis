@@ -31,7 +31,7 @@ const homepagePlans = new Vue({
 				{
 					name: "Tau",
 					description: "A specialized plan for special requests.",
-					imgUrl: "/img/cat.jpg"
+					imgUrl: "/img/plans/Tau.svg"
 				}
 			]
 		}
